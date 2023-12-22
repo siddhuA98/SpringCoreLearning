@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Enable annotation processing -->
+    <context:annotation-config/>
+    <context:component-scan base-package="org/example/beanusingxmlannotations"></context:component-scan>
+    <context:property-placeholder location="application.properties"></context:property-placeholder>
+
+    <!-- Define your beans and other configurations below -->
+
+    <!-- Example bean with annotations -->
+    <bean id="anotherSchool" class="org.example.beanusingxmlannotations.AnotherSchool">
+        <property name="schoolName" value="${anotherschool.name}"></property>
+        <property name="schoolId" value="${anotherschool.id}"></property>
+    </bean>
+
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+
+
+        <bean id="MathTeacher" class="org.example.beanusingxml.MathTeacher"></bean>
+        <bean id="ScienceTeacher" class="org.example.beanusingxml.ScienceTeacher"></bean>
+
+        <bean id="principal" class="org.example.beanusingxml.Principal">
+            <property name="name" value="Jhon"></property>
+            <property name="experience" value="25"></property>
+        </bean>
+
+        <bean id="school" class="org.example.beanusingxml.School">
+            <property name="schoolName" value="Navodaya"></property>
+            <property name="schoolId" value="1001"></property>
+            <property name="principal" ref="principal"></property>
+            <property name="teacher" ref="ScienceTeacher"></property>
+        </bean>
+</beans>
